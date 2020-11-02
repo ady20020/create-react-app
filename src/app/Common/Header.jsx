@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  // const activeStyle = { color: "#F15B2A" };
+
   return (
     <nav>
      <div className="container">
@@ -10,7 +10,7 @@ const Header = () => {
           <div className="col-md-12">
             {/* <!-- Nav menu --> */}
             <nav className="navbar navbar-expand-lg navbar-light">
-              <a className="navbar-brand" href="index.html"><img src="./images/logo.png" alt="#" /></a>
+              <a className="navbar-brand" href="/"><img src="./images/logo.png" alt="#" /></a>
               <button className="navbar-toggler nav-custome1" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle

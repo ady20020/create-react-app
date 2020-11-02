@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 
 
 // Dynamically loaded components
-const Header = React.lazy(() => import('../Common/Header.jsx'));
+// const Header = React.lazy(() => import('../Common/Header.jsx'));
 const Home = React.lazy(() => import('../Home/Home.jsx'));
 const Appointment = React.lazy(() => import('../Appointment/Appointment.jsx'));
 
@@ -20,13 +20,7 @@ const DefaultRoot = ({ component: Component, path, exact, withHeader, withSideba
                 const { match : {params: urlProps} = {}} = props;
                 const { location: {state: navigationStateProps}} = props;
                 
-                return (
-                    <>
-                        <div className='banner--wrap' id="main-body">
-                            <Component {...rest} {...urlProps} {...navigationStateProps} />
-                        </div>
-                    </>
-                );
+                return <Component {...rest} {...urlProps} {...navigationStateProps} />
             }
          }
         />
