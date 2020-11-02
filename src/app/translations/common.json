@@ -1,0 +1,54 @@
+{
+    "header": {
+        "tag": ["#4Humanity", "#لأجل_الإنسانية"]
+    },
+    "Biogenix": {
+        "title": ["#4Humanity", "#لأجل_الإنسانية"],
+        "Biogenix-1": ["Thank You for volunteering for the #4Humanity campaign – and helping the UAE to make history.", "شكراً لك على تطوعك في حملة #لأجل_الإنسانية ومساعدة دولة الإمارات في كتابة التاريخ."],
+        "Biogenix-2": ["Your participation in these vital Phase III trials can play a massive role in helping to overcome the global Covid-19 pandemic and has the active support of the UAE’s leadership at the highest levels.", "مشاركتك في تجارب المرحلة الثالثة الهامة قد تُسهم بدور حيوي في المساعدة على تجاوز وباء (كوفيد-19) العالمي، وتحظى بدعم فاعل من القيادة الرشيدة على أعلى المستويات."],
+        "Biogenix-3": ["In the weeks ahead, as you help us in this important initiative, we wanted to reassure you that your safety will always come first.", "على مدى الأسابيع المقبلة، وخلال مساعدتك لنا في إنجاز هذا العمل الهام، نؤكد لك بأن سلامتك تأتي دائماً في المقام الأول."],
+        "Biogenix-4": ["Before the first trial or test commences we will check your medical history to ensure you can participate.", "قبل بدء التجربة أو الاختبار الأول، سنتحقّق من تاريخك الطبي، للتأكد من قدرتك على المشاركة."],
+        "Biogenix-5": ["These trials are being conducted in compliance with strict international guidelines stipulated by the World Health Organization (WHO) and the United States Food & Drug Authority (USFDA).", "تقام هذه التجارب وفقاً للمبادئ التوجيهية الدولية الصارمة التي نصت عليها منظمة الصحة العالمية، وهيئة الغذاء والدواء الأمريكية."],
+        "Biogenix-6": ["To know more about this initiative, click to", "لمعرفة المزيد عن هذه المبادرة ، انقر فوق"],
+        "Biogenix-download": ["download our 'know more' document", "قم بتنزيل مستند اعرف المزيد"],
+        "Biogenix-7": ["If you have questions or concerns during the trials – our team of medical practitioners will be there to help you every step of the way. You can also contact our ", "إذا كانت لديك أسئلة أو مخاوف أثناء التجارب - سيكون فريقنا من الممارسين الطبيين موجودين لمساعدتك في كل خطوة على الطريق. يمكنك أيضا الاتصال بنا"],
+        "Biogenix-8": ["special hotline on", "الخط الساخن الخاص على"],
+        "Biogenix-9": ["The UAE Nation Thanks You.", "دولة الإمارات شكرا لك."],
+        "Biogenix-10": ["The World Thanks You.", "العالم شكرا لك."],
+        "Biogenix-11": ["We Thank You For Joining #4Humanity", "نشكركم على الانضمام # 4 الإنسانية"],
+        "Biogenix-hotline": ["02 819 1111", "1111 819 02"]
+    },
+    "register":{
+        "title": ["Registration", "استمارة تسجيل"],
+        "desc": ["You must be a UAE resident, between 18 years - 60 years of age to apply for the COVID 19 - Vaccine Phase III Clinical Trial.", "يجب أن تكون مقيما في دولة الإمارات ويتراوح عمرك بين 18 - 60 عاماً للتقدم للمشاركة في التجربة السريرية للمرحلة الثالثة للقاح كوفيد-19"],
+        "fields": ["Required fields: *", "حقول إلزامية: *"],
+        "eid": ["Emirates Id*", "هويه الإمارات*"],
+        "fname": ["First Name*", "*الاسم الأول"],
+        "lname": ["Family Name*", "*اسم العائلة"],
+        "email": ["Email Address*", "*عنوان البريد الإلكتروني"],
+        "consent1": ["By entering your email address above, you agree to receive communications from G42 Healthcare. You may withdraw your consent at any time.", "بإدخال عنوان بريدك الإلكتروني أعلاه، فإنك توافق على تلقي اتصالات من G42 Healthcare. يمكنك إلغاء موافقتك في أي وقت."],
+        "telephone": ["Telephone Number*", "*رقم الهاتف"],
+        "age": ["Age*", "*العمر"],
+        "gender": ["Gender*", "*الجنس"],
+        "male": ["Male", "ذكر"],
+        "female": ["Female", "أنثى"],
+        "emirate": ["Emirate*", "الإمارة *"],
+        "nationality": ["Nationality*", "الجنسية *"],
+        "besttime": ["Please indicate the best time for us to call? *", "*ما هو أفضل وقت للاتصال بك؟"],
+        "submit": ["SUBMIT", " أرسل"],
+        "accept": ["Accept", "موافق"],
+        "consent2": ["By submitting personal information using this form I agree that 4Humanity authorized parties may process this information for the purposes of assessing my suitability for future studies. I understand that I may withdraw my consent at any time.", "من خلال تقديم معلوماتي الشخصية عبر هذا النموذج ، أوافق على أنه يجوز لشركة 4Humanity وكياناتها المعتمدة استخدام هذه المعلومات لأغراض تقييم ما إذا كانت مناسبة للدراسات المستقبلية أم لا. إنني على علم بإمكانية سحب موافقتي في أي وقت."],
+        "pregnant": ["Are you pregnant?*", "*هل انت حامل؟"],
+        "preferredLanguage": ["Preferred Language", "اللغة المفضلة"]
+
+    },
+    "popup":{
+        "errorTitle": ["Registration Error", "خطأ في التسجيل"],
+        "errorDesc": ["Please ensure that the fields are accurately filled as per requirement.", "يرجى التأكد من تعبئة الحقول بدقة حسب المتطلبات."],
+        "congratulations": ["Congratulations and thank you for your commitment!", "مبروك وشكرا لالتزامك!"],
+        "complete": ["Your registration to the 4Humanity program is now complete.", "تم الانتهاء من التسجيل في برنامج 4Humanity."],
+        "followup": ["You will receive a follow-up call in the coming days", "ستتلقى مكالمة متابعة في الأيام القادمة"],
+        "counsellor": ["from our program counsellors to schedule your initial medical screening at one of the available facilities.", "من مستشاري برنامجنا لجدولة الفحص الطبي الأولي في أحد المرافق المتاحة."],
+        "channels": ["Follow our social media channels @AShot4Humanity to stay updated on program developments and special announcements.", "تابع قنوات التواصل الاجتماعي الخاصة بنا @ AShot4Humanity لتبقى على اطلاع دائم على تطورات البرنامج والإعلانات الخاصة."]
+    }
+}

@@ -1,0 +1,70 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay2
+  IMAGE_NAME: ai.g42.4humanity/frontend
+  IMAGE_VERSION: latest
+  DOCKER_REGISTRY: docker.g42.ae/docker-cogna
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_TLS_CERTDIR: ""
+  JUMP_SERVER: gitlab_ci@91.201.4.91
+  # DEV_SERVER: ubuntu@192.168.0.25
+  PROD_SERVER1: ubuntu@192.168.0.164
+  PROD_SERVER2: ubuntu@192.168.0.22
+  DEPLOY_PATH: /data/app/4humanity
+  TAR_FILE: ai.g42.4humanity-frontend-latest.tar
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  tags:
+    - docker
+  script:
+    - docker build -f docker/Dockerfile -t $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_VERSION-$CI_COMMIT_BRANCH .
+    - docker push $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_VERSION-$CI_COMMIT_BRANCH
+    - docker save -o ${TAR_FILE} $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_VERSION-$CI_COMMIT_BRANCH
+  artifacts:
+    expire_in: 1d
+    paths:
+      - ${TAR_FILE}
+
+# deploy-develop:
+#   only:
+#     - develop
+#   tags:
+#     - shell
+#   stage: deploy
+#   before_script:
+#     - eval "$(ssh-agent)"
+#     - ssh-add <(echo "$GITLAB_CI_PRIVATE_KEY")
+#     - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+#     - chmod 644 ~/.ssh/known_hosts
+#   script:
+#     - scp -o 'ProxyJump ${JUMP_SERVER}' com.g42.lab-tenk-lab.tar ${DEV_SERVER}:${DEPLOY_PATH}
+#     - ssh -J ${JUMP_SERVER} ${DEV_SERVER} "cd ${DEPLOY_PATH}; docker load < com.g42.lab-tenk-lab.tar"
+#     - ssh -J ${JUMP_SERVER} ${DEV_SERVER} "cd ${DEPLOY_PATH}; docker-compose down; docker-compose up -d"
+
+deploy-production:
+  only:
+    - master
+  tags:
+    - shell
+  stage: deploy
+  before_script:
+    - eval "$(ssh-agent)"
+    - ssh-add <(echo "$GITLAB_CI_PRIVATE_KEY")
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - scp -o 'ProxyJump ${JUMP_SERVER}' ${TAR_FILE} ${PROD_SERVER1}:${DEPLOY_PATH}
+    - ssh -J ${JUMP_SERVER} ${PROD_SERVER1} "cd ${DEPLOY_PATH}; docker load < ${TAR_FILE}"
+    - ssh -J ${JUMP_SERVER} ${PROD_SERVER1} "cd ${DEPLOY_PATH}; docker-compose down; docker-compose up -d"
+    - scp -o 'ProxyJump ${JUMP_SERVER}' ${TAR_FILE} ${PROD_SERVER2}:${DEPLOY_PATH}
+    - ssh -J ${JUMP_SERVER} ${PROD_SERVER2} "cd ${DEPLOY_PATH}; docker load < ${TAR_FILE}"
+    - ssh -J ${JUMP_SERVER} ${PROD_SERVER2} "cd ${DEPLOY_PATH}; docker-compose down; docker-compose up -d"
